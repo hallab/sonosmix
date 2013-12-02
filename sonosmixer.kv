@@ -1,0 +1,64 @@
+<SonosMixer>:
+    orientation: "vertical"
+
+    Label:
+        text: "Sonos Mixer"
+        size_hint_y: None
+        height: self.texture_size[1] + 16
+        halign: 'left'
+        text_size: (self.width-16, None)
+        canvas.before:
+            Color:
+                rgb: 0.2, 0.7, 0.9
+            Rectangle:
+                pos: self.pos
+                size: (self.width, 2)    
+    BoxLayout:
+        id: mixer
+        orientation: "horizontal"   
+        Label:
+            text: "Looking for Sonos speakers..."
+
+<SpeakerCtrl>
+    orientation: "vertical"    
+
+    VolumeSlider:
+        id: volume_slider
+        padding: 24
+        orientation: "vertical"
+    Label:
+        text: root.name
+        size_hint_y: None
+        height: self.texture_size[1] + 16
+    Widget:
+        size_hint_y: None
+        height:  16
+
+<InfoPopup>
+    title: 'Sonos Mixer'
+    size_hint: (None, None)
+    size: (400, 400)
+
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Sonos Mixer is an open source app, available on GitHub, and commercially developed by Hallab."
+            text_size: (self.width - 16, self.height - 16)
+            valign: "top"
+        Button:
+            text: "Rate app"
+            size_hint_y: None
+            height: 60
+            on_release: root.view('market://details?id=se.hallab.sonosmixer')
+        Button:
+            text: "GidHub page"
+            size_hint_y: None
+            height: 60
+            on_release: root.view('http://github.com/hallab/sonosmix/')            
+        Button:
+            text: "Support/Feature request"
+            size_hint_y: None
+            height: 60
+            on_release: root.view('http://sonosmix.userecho.com/')
+
+
