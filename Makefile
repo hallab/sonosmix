@@ -1,6 +1,6 @@
-VERSION=0.1
+VERSION=0.1.1
 BUILDDIR=/usr/local/src/python-for-android/dist/default/
-BUILDARGS=--dir $(shell pwd)/dist --package se.hallab.sonosmixer`echo $(FAN) | tr F f` --icon $(shell pwd)/icon_256.png --orientation sensor --name "SonosMixer"$(FAN) --permission INTERNET
+BUILDARGS=--dir $(shell pwd)/dist --package se.hallab.sonosmixer`echo $(FAN) | tr F f` --icon $(shell pwd)/icon$(FAN)_256.png --orientation sensor --name "SonosMixer"$(FAN) --permission INTERNET
 JAVA_HOME=/usr/lib/jvm/default-java
 
 install:
